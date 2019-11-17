@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
   def index
-    @tweet = "プログラミング中です"
+    @tweet = Tweet.find(3)
   end
 end
