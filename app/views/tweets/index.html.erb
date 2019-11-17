@@ -1,3 +1,5 @@
 <div class = "dontents row ">
-  <p><%= @tweet.text %></p>
+  <% @tweets.each do |tweet| %>
+    <p><%= tweet.text %></p>
+  <% end %>
 </div>
