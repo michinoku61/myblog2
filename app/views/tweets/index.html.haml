@@ -1,3 +1,7 @@
 .dontents.row
   - @tweets.each do |tweet|
-    %p= tweet.text
+    .content_post{:style => "background-image: url(#{tweet.image});"}
+      = simple_format(tweet.text)
+      %span.name
+        = tweet.name
+  = image_tag "桜の画像.jpg"

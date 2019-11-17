@@ -1,0 +1,4 @@
+.contentes_row
+  = form_with(medel: @tweet, local: true) do |form|
+    %h3 投稿する
+    = form.text_field :name, placeholder: '名前', class: 'name_box'
