@@ -1,4 +1,12 @@
 .contentes_row
-  = form_with(medel: @tweet, local: true) do |form|
-    %h3 投稿する
-    = form.text_field :name, placeholder: '名前', class: 'name_box'
+  = form_with(medel: @tweet, url: tweets_path, local: true) do |form|
+    %h3 投稿
+    .name_box
+      = form.text_field :name, placeholder: '名前'
+    .image_box
+      = form.file_field :image, placeholder: '画像'
+    .text_box
+      = form.text_area :text ,placeholder: 'text' 
+    .submit_button
+      = form.submit '送信する' do
+        送信する
