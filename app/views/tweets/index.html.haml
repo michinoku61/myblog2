@@ -2,4 +2,5 @@
   - @tweets.each do |tweet|
     = simple_format(tweet.name)
     = simple_format(tweet.text)
+= paginate(@tweets)
 
