@@ -1,6 +1,7 @@
 .dontents.row
   - @tweets.each do |tweet|
-    = simple_format(tweet.user.name)
+    -# = simple_format(tweet.user.name)
     = simple_format(tweet.text)
+    -if user_signed_in? && current_user.id = tweet.user_id
+      = link_to '削除', "/tweets/#{tweet.id}", method: :delete
 = paginate(@tweets)
-
