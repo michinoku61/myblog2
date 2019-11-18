@@ -25,6 +25,19 @@
         %h1.grid-6
           = link_to("/") do
             MY BLOG
+          - if user_signed_in?
+            .user_nav
+              %span
+                = current_user.name
+            .user_signed_yes
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+          -else
+            .user_signed_no
+              = link_to 'ログイン', new_user_session_path, class: 'post'
+              = link_to '新規登録', new_user_registration_path, class: 'post'
+            
+            -# = link_to "ログイン" new_user_session_path, class: 'post'
+            -# = link_to "新規登録" new_user_registration_path, class: 'post'
         .user_nav.grid-6
           = link_to("/tweets/new") do
             投稿する
