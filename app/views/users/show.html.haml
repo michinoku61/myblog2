@@ -1,8 +1,9 @@
 .user_show_box
+  %h4
+    = @name
+    さんの投稿一覧
   %p
     - @tweets.each do |tweet|
       .show_box_post
         = simple_format(tweet.text)
-        %span.name
-          = tweet.name
     = paginate(@tweets)
