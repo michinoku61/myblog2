@@ -26,6 +26,9 @@
           = link_to("/") do
             MY BLOG
           - if user_signed_in?
+            .user_nav
+              %span
+                = current_user.name
             .user_signed_yes
               = link_to 'ログアウト', destroy_user_session_path, method: :delete
           -else
