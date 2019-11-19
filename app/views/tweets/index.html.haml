@@ -1,8 +1,15 @@
-.dontents.row
+.contents_row
   - @tweets.each do |tweet|
     -# = simple_format(tweet.user.name)
     = simple_format(tweet.text)
-    -if user_signed_in? && current_user.id = tweet.user_id
-      = link_to '削除する', "/tweets/#{tweet.id}", method: :delete
-      = link_to '編集する', "/tweets/#{tweet.id}/edit", method: :get
+    .user_name_box
+      投稿者
+      = tweet.user.name
+    - if user_signed_in? && current_user.id == tweet.user_id
+      .link_list_index
+        = link_to '削除する', "/tweets/#{tweet.id}", method: :delete
+        = link_to '編集する', "/tweets/#{tweet.id}/edit", method: :get
+        = link_to '詳細ページへ', "/tweets/#{tweet.id}", method: :get
+    - else
+      = link_to '詳細ページへ', "/tweets/#{tweet.id}", method: :get
 = paginate(@tweets)
