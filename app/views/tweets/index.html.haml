@@ -10,4 +10,6 @@
         = link_to '削除する', "/tweets/#{tweet.id}", method: :delete
         = link_to '編集する', "/tweets/#{tweet.id}/edit", method: :get
         = link_to '詳細ページへ', "/tweets/#{tweet.id}", method: :get
+    - else
+      = link_to '詳細ページへ', "/tweets/#{tweet.id}", method: :get
 = paginate(@tweets)
