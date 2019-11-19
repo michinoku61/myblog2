@@ -1,0 +1,6 @@
+.show_box
+  - if user_signed_in? && current_user.id == @tweet.user_id
+    = simple_format(@tweet.text)
+    = link_to '削除する', "/tweets/#{@tweet.id}", method: :delete
+    = link_to '編集する', "/tweets/#{@tweet.id}/edit", method: :get
+    = link_to 'user_idが入る', user_path
