@@ -1,6 +1,7 @@
 .contents_row
   - @tweets.each do |tweet|
-    -# = simple_format(tweet.user.name)
+    - if tweet.image.attached?
+      = image_tag tweet.image
     = simple_format(tweet.text)
     .user_name_box
       投稿者

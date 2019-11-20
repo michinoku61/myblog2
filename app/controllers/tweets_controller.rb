@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.create(text: tweet_params[:text], user_id: current_user.id)
+    @tweet = Tweet.create(text: tweet_params[:text], image: tweet_params[:image], user_id: current_user.id)
   end
 
   def destroy
@@ -39,7 +39,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.permit(:text)
+    params.permit(:text,:image)
   end
 
   def update_params
