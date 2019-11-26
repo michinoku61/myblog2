@@ -50,5 +50,9 @@ test:
 production:
   <<: *default
   database: myblog2_production
-  username: myblog2
-  password: <%= ENV['MYBLOG2_DATABASE_PASSWORD'] %>
+  username: root
+  password:
+
+
+# username: myblog2
+#   password: <%= ENV['MYBLOG2_DATABASE_PASSWORD'] %>
